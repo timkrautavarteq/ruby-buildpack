@@ -4,7 +4,9 @@
 $stdout.sync = true
 
 cache_dir = ARGV[1]
+puts "cache_dir = #{cache_dir}"
 compile_extensions_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'compile-extensions'))
+puts `ls /tmp`
 `#{File.join(compile_extensions_dir, 'bin', 'validate_app_cache')} #{cache_dir}`
 
 $:.unshift File.expand_path("../../lib", __FILE__)
